@@ -10,7 +10,7 @@ struct SqList{
 	int length;
 };
 
-InitList(SqList *L){
+void InitList(SqList *L){
 	L->length=0;
 	//for test
 //	for(int i=0;i<L->length;i++) {
@@ -29,11 +29,12 @@ int LocateElem(SqList L,ElementType e){
 			return i+1;
 		}
 	}
+	return -1;
 }
 
 ElementType GetElem(SqList L,int i){
 	if(i<1||i>L.length)
-		return -9999;
+		return ERR;
 	else
 		return L.data[i-1];
 }
@@ -61,7 +62,7 @@ ElementType Delete(SqList *L,int i){
 		printf("SqList is already empty"); 
 		return ERR;
 	}
-	if(i>L->length){
+	if(i>L->length||i==0){
 		printf("index error");
 		return ERR;
 	}
