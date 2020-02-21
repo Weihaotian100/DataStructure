@@ -35,7 +35,7 @@ int LocateElem(SqList L,ElementType e){
 
 ElementType GetElem(SqList L,int i){
 	if(i<1||i>L.length)
-		return -9999;
+		return ERR;
 	else
 		return L.data[i-1];
 }
@@ -63,7 +63,7 @@ ElementType Delete(SqList *L,int i){
 		printf("SqList is already empty"); 
 		return ERR;
 	}
-	if(i>L->length){
+	if(i>L->length||i==0){
 		printf("index error");
 		return ERR;
 	}
