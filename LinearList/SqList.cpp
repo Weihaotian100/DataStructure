@@ -28,11 +28,7 @@ struct SqList{
 
 //初始化顺序表 
 void InitList(SqList *L){
-	L->length=6;
-	//for test
-	for(int i=0;i<L->length;i++) {
-		L->data[i]=i;
-	}
+	L->length=0;
 }
 
 //求表长 
@@ -42,7 +38,6 @@ int Length(SqList L){
 
 //按位查找 
 int LocateElem(SqList L,ElementType e){
-	//int position=-1;
 	for(int i=0;i<L.length;i++){
 		if(L.data[i]==e){
 			return i+1;
@@ -84,7 +79,7 @@ ElementType Delete(SqList *L,int i){
 		printf("SqList is already empty"); 
 		return ERR;
 	}
-	if(i>L->length||i==0){
+	if(i>L->length||<1){
 		printf("index error");
 		return ERR;
 	}
