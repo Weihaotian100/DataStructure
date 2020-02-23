@@ -46,7 +46,7 @@ int Length(SqList L){
 	return L.length;
 }
 
-//按位查找 
+//按值查找 
 int LocateElem(SqList L,ElementType e){
 	for(int i=0;i<L.length;i++){
 		if(L.data[i]==e){
@@ -55,7 +55,7 @@ int LocateElem(SqList L,ElementType e){
 	}
 }
 
-//按值查找 
+//按位查找 
 ElementType GetElem(SqList L,int i){
 	if(i<1||i>L.length)
 		return ERR;
