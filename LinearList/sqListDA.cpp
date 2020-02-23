@@ -41,7 +41,7 @@ void destroy(SqList *L){
 	free(L->data);
 }
 
-//求表厂 
+//求表长
 int Length(SqList L){
 	return L.length;
 }
