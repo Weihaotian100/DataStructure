@@ -14,13 +14,13 @@
 #include<stdlib.h> 
 
 typedef int ElementType; 
-typedef struct LinkedNode{
+typedef struct LNode{
 	ElementType data;
-	LinkedNode *next;
+	LNode *next;
 }*LStack;
 bool isEmpty(LStack &LS);
 bool init(LStack &LS){
-	LS=(LinkedNode*)malloc(sizeof(LinkedNode));
+	LS=(LNode*)malloc(sizeof(LNode));
 	if(LS==NULL){
 		return false;
 	}
@@ -28,7 +28,7 @@ bool init(LStack &LS){
 	return true;
 }
 bool push(LStack &LS,ElementType x){
-	LinkedNode* LN=(struct LinkedNode*)malloc(sizeof(struct LinkedNode));
+	LNode* LN=(struct LNode*)malloc(sizeof(struct LNode));
 	if(LN==NULL)
 		return false;
 	LN->next=LS->next;
@@ -39,7 +39,7 @@ bool push(LStack &LS,ElementType x){
 bool pop(LStack &LS,ElementType &x){
 	if(isEmpty(LS))
 		return false;
-	LinkedNode* LN=LS->next;
+	LNode* LN=LS->next;
 	LS->next=LS->next->next;
 	x=LN->data;
 	free(LN);
