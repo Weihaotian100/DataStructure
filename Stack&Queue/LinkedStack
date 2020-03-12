@@ -17,7 +17,7 @@ typedef int ElementType;
 typedef struct LNode{
 	ElementType data;
 	LNode *next;
-}*LStack;
+}LNode,*LStack;
 bool isEmpty(LStack &LS);
 bool init(LStack &LS){
 	LS=(LNode*)malloc(sizeof(LNode));
@@ -28,7 +28,7 @@ bool init(LStack &LS){
 	return true;
 }
 bool push(LStack &LS,ElementType x){
-	LNode* LN=(struct LNode*)malloc(sizeof(struct LNode));
+	LNode* LN=(LNode*)malloc(sizeof(LNode));
 	if(LN==NULL)
 		return false;
 	LN->next=LS->next;
